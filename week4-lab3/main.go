@@ -1,16 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"errors"
+	"fmt"
 )
 
 type Student struct {
-	ID string 'json:"id"'
-	Name string 'json:"name"'
-	Email string 'json:"email"'
-	Year int 'json:"year"'
-	GPA float64 'json:"gpa"'
+	ID    string  `json:"id"`
+	Name  string  `json:"name"`
+	Email string  `json:"email"`
+	Year  int     `json:"year"`
+	GPA   float64 `json:"gpa"`
 }
 
 func (s *Student) IsHonor() bool {
@@ -34,19 +34,19 @@ func main() {
 	//var st Student = Student{ID:"1", Name:"ruthaichanok", Email:"reungthanoo_r@silpakorn.edu", Year:6, GPA:2.62}
 
 	//st := Student = Student{ID:"1", Name:"ruthaichanok", Email:"reungthanoo_r@silpakorn.edu", Year:6, GPA:2.62}
-	
+
 	Students := []Student{
-		{ID:"1", Name:"reuthaichanok", Email:"reungthanoo_r@silpakorn.edu", Year:6, GPA:2.62},
-		{ID:"2", Name:"alice", Email:"alice@silpakorn.edu", Year:4, GPA:3.21},
+		{ID: "1", Name: "reuthaichanok", Email: "reungthanoo_r@silpakorn.edu", Year: 6, GPA: 2.62},
+		{ID: "2", Name: "alice", Email: "alice@silpakorn.edu", Year: 4, GPA: 3.21},
 	}
-	newStudent := Student{ID:"3", Name:"trudy", Email:"trudy@silpakorn.edu", Year:2, GPA:3.92}
+	newStudent := Student{ID: "3", Name: "trudy", Email: "trudy@silpakorn.edu", Year: 2, GPA: 3.92}
 	students = append(students, newStudent)
 
 	for i, student := range students {
 		fmt.Printf("%id Honor = %v\n", i, student.IsHonor())
 		fmt.Printf("%id Validation = %v\n", i, student.Validate())
 	}
-	
+
 	fmt.Printf("Honor %v", st.IsHonor())
 	fmt.Printf("Validation = %v\n", st.Validate())
 }
